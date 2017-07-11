@@ -8,12 +8,16 @@ app.example2 = function() {
     var timeoutFunList = [];
     
     for (var i = 0; i < 10; i++) {
-         //timeoutFunList.push();      
+         timeoutFunList.push((function(number) {
+             return function() {
+                 setTimeout(function() {
+                     example2Logger.log(number + ' a harmadikon: ' + (number * number * number));
+                 }, 500 + number * 100);
+             }
+         }(i)));      
     }
 
+    timeoutFunList.forEach(function(fun) {
+        fun();
+    })
 }
-/*
-(function(k) {
-    console.log(k);
-})(2);
-*/

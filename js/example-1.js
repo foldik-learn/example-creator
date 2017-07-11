@@ -18,5 +18,3 @@ app.example1 = function () {
         fun();
     });
 }
-
-app.example1();

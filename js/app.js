@@ -1,5 +1,7 @@
 /* Don't delete it */
-var logger = function(elementId) {
+var app = app || {};
+
+app.logger = function(elementId) {
     function log(text) {
         $('#' + elementId).append('<div>' + text + '</div>');
     }
@@ -8,9 +10,3 @@ var logger = function(elementId) {
 		log: log
 	}
 };
-
-/* Start from here*/
-
-var example1Logger = logger('example-1');
-
-example1Logger.log('Hello');
